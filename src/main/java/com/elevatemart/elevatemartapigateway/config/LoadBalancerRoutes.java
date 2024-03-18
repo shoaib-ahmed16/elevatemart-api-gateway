@@ -25,6 +25,6 @@ public class LoadBalancerRoutes {
                         .uri("lb://product-micro-service"))
                 .route("product-failOver-id", r -> r.path("/api/v1/product/**")
                         .uri("lb://product-failOver-micro-service"))
-                .build(); ad
+                .build();
     }
 }
