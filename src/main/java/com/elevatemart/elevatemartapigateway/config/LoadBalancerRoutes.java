@@ -23,8 +23,8 @@ public class LoadBalancerRoutes {
                                     .setRouteId("product-failOver-fallback-id")
                                 ))
                         .uri("lb://product-micro-service"))
-                .route("product-failOver-id", r -> r.path("/product-failOver-micro-service/**")
+                .route("product-failOver-id", r -> r.path("/api/v1/product/**")
                         .uri("lb://product-failOver-micro-service"))
-                .build();
+                .build(); ad
     }
 }
