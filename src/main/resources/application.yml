@@ -1,0 +1,16 @@
+
+logging:
+  level:
+    org:
+      springframework: debug
+spring:
+  application:
+    name: elevatemart-api-gateway
+  active:
+    profile: local-discovery
+
+server:
+  port: 9099
+eureka:
+  client:
+    register-with-eureka: false
