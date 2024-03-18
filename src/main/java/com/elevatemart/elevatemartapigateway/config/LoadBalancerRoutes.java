@@ -1,15 +1,17 @@
 package com.elevatemart.elevatemartapigateway.config;
 
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Profile("local-discovery")
-@Configuration
+//@EnableDiscoveryClient
+//@Profile("local-discovery")
+//@Configuration
 public class LoadBalancerRoutes {
-    @Bean
+   /* @Bean
     public RouteLocator loadBalancerRoutes(RouteLocatorBuilder builder){
         return builder.routes()
                 .route("security-service", r -> r.path("/api/v1/security/**")
@@ -20,11 +22,11 @@ public class LoadBalancerRoutes {
                         .filters(
                                 f->f.circuitBreaker(c->c.setName("productCB")
                                     .setFallbackUri("forward:/product-failOver-micro-service")
-                                    .setRouteId("product-failOver-fallback-id")
+                                    .setRouteId("product-failOver-id")
                                 ))
                         .uri("lb://product-micro-service"))
-                .route("product-failOver-id", r -> r.path("/api/v1/product/**")
+                .route("product-failOver-id", r -> r.path("/api/v1/fallback/product/**")
                         .uri("lb://product-failOver-micro-service"))
                 .build();
-    }
+    }*/
 }
