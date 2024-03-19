@@ -6,11 +6,10 @@ logging:
 spring:
   application:
     name: elevatemart-api-gateway
-  active:
-    profile: local-discovery
 
 server:
   port: 9099
 eureka:
   client:
     register-with-eureka: false
+
