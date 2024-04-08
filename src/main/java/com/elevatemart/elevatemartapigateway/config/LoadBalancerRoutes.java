@@ -23,6 +23,7 @@ public class LoadBalancerRoutes {
                         .uri("lb://product-micro-service"))
                 .route("product-failOver-id", r -> r.path("/product-failOver-micro-service/**")
                         .uri("lb://product-failOver-micro-service"))
+//                .route("spring-cloud-config",r->r.path("/**").uri("lb://elevatemart-spring-cloud-config"))
                 .build();
     }
 }
